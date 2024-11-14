@@ -6,7 +6,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score
 
 # Load the data
-df = pd.read_csv('parsed-toy-data-aggregated.csv')
+df = pd.read_csv('./data/parsed-toy-data-aggregated.csv')
 
 # Ensure the Datetime column is in datetime format
 df['Datetime'] = pd.to_datetime(df['Datetime'])
