@@ -36,4 +36,4 @@ result_df.reset_index(inplace=True)
 
 print(result_df)
 
-result_df.to_csv('../data/parsed-hdfs-aggregated.csv', index=False)
+result_df.to_csv('../data/hdfs-aggregated.csv', index=False)

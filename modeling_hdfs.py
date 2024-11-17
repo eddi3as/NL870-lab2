@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score
 
-df = pd.read_csv('../data/parsed-hdfs-aggregated.csv')
+df = pd.read_csv('./data/hdfs-aggregated.csv')
 
 df['Datetime'] = pd.to_datetime(df['Datetime'])
 
@@ -49,11 +49,8 @@ dt_model.fit(X_train, y_train)
 dt_pred = dt_model.predict_proba(X_test)[:, 1]
 
 def evaluate_model(y_true, y_pred, model_name):
-    #accuracy = accuracy_score(y_true, y_pred)
-    #precision = precision_score(y_true, y_pred)
     threshold = 0.2
 
-    # Convert probabilities to binary predictions based on the threshold
     rf_val_pred = (y_pred >= threshold).astype(int)
     print(rf_val_pred)
     accuracy = accuracy_score(y_true, rf_val_pred)
