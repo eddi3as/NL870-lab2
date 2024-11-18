@@ -18,7 +18,7 @@ def split_and_aggregate_by_cluster(df, time_interval='30T', error_threshold=5, a
     return cluster_counts
 
 
-time_interval = '30T'
+time_interval = '10T'
 anomaly_clusters = [9]  # Cluster IDs ou se trouve les anomalies
 error_threshold = 5
 

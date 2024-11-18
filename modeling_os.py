@@ -11,9 +11,9 @@ df['Datetime'] = pd.to_datetime(df['Datetime'])
 
 df = df.sort_values(by='Datetime')
 
-# Data split into 80% training, 10% validation, and 10% testing
-train_size = int(0.50 * len(df))
-val_size = int(0.25 * len(df))
+# Data split into 70% training, 15% validation, and 15% testing
+train_size = int(0.70 * len(df))
+val_size = int(0.15 * len(df))
 test_size = len(df) - train_size - val_size
 
 train_df = df.iloc[:train_size]

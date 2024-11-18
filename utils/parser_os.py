@@ -8,7 +8,7 @@ config = TemplateMinerConfig()
 
 drain_parser = TemplateMiner(config=config)
 
-log_pattern = re.compile(r"^(?P<log_file>[\w.-]+)\.(?P<log_file_number>\d+)\.(?P<timestamp>\d{4}-\d{2}-\d{2}_\d{2}:\d{2}:\d{2})\s(?P<date>\d{4}-\d{2}-\d{2})\s(?P<time>\d{2}:\d{2}:\d{2}\.\d+)\s(?P<process_id>\d+)\s(?P<log_level>\w+)\s(?P<source>[\w\.]+)\s(?P<content>.+)")
+log_pattern = re.compile(r"^(?P<log_file>[\w.-]+)\.(?P<timestamp>\d{4}-\d{2}-\d{2}_\d{2}:\d{2}:\d{2})\s(?P<date>\d{4}-\d{2}-\d{2})\s(?P<time>\d{2}:\d{2}:\d{2}\.\d+)\s(?P<process_id>\d+)\s(?P<log_level>\w+)\s(?P<source>[\w\.]+)\s(?P<content>.+)")
 
 with open('../logs/OpenStack.log', 'r') as log_file:
     for line in log_file:
@@ -20,7 +20,6 @@ with open('../logs/OpenStack.log', 'r') as log_file:
 
 log_data = []
 with open('../logs/OpenStack.log', 'r') as log_file:
-    ct = 0
     for log in log_file:
         match = log_pattern.match(log)
         if match:
